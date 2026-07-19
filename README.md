@@ -50,16 +50,33 @@ apontando `MONGODB_URI` para
 ### Prod — app + MongoDB + nginx
 1. `cp .env.prod.example .env.prod` e preencher (passwords, `MONGODB_URI`,
    `NEXT_PUBLIC_SITE_URL`, domínio)
-2. Subir:
+2. Colocar o certificado (ver secção SSL abaixo) em `nginx/ssl/`
+3. Subir:
    ```bash
    docker compose -f docker-compose.prod.yml --env-file .env.prod up -d --build
    ```
-3. A app fica atrás do nginx na porta 80, que faz proxy para o container
-   `app` (porta 3000).
+4. A app fica atrás do nginx (80 → redireciona para 443, TLS terminado no
+   nginx, proxy para o container `app` na porta 3000).
 
-O TLS/HTTPS é terminado a montante pela DynaDot — o nginx só serve HTTP
-interno e confia no cabeçalho `X-Forwarded-Proto` enviado pelo proxy da
-frente. Não são necessários certificados no servidor.
+### SSL — certificado Let's Encrypt da DynaDot
+A DynaDot emite e **renova automaticamente** um certificado Let's Encrypt
+(válido 3 meses) enquanto usarmos os name servers deles. Os ficheiros são
+descarregados e servidos pelo nosso nginx.
+
+**Instalação inicial** (painel DynaDot → domínio → Free SSL):
+- `Download Certificate` → guardar como `nginx/ssl/fullchain.pem`
+- Private Key `Download File` → guardar como `nginx/ssl/privkey.pem`
+- `docker compose -f docker-compose.prod.yml exec nginx nginx -s reload`
+
+**Renovação automática** (o cert muda a cada ~3 meses): no painel, em
+`Permanent Download Link → Click to show`, copiar os URLs permanentes e
+agendar o refresh no cron do servidor:
+```bash
+0 4 * * 1  cd /opt/atenda && CERT_URL="<link-cert>" KEY_URL="<link-key>" \
+           ./nginx/refresh-cert.sh >> /var/log/atenda-cert.log 2>&1
+```
+O `refresh-cert.sh` só substitui os ficheiros e recarrega o nginx quando o
+certificado realmente mudou.
 
 ## SEO incluído
 - Metadata API: title/description com keywords de tarefa, canonical, OG
