@@ -1,0 +1,37 @@
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{--carbon:#181925;--iris:#9580ff;--lavender:#918df6;--mint:#33c758;--sky:#2c78fc;--ash:#8a8a97}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1080px}
+body{font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:#fff;letter-spacing:-.025em;overflow:hidden;position:relative;background:linear-gradient(150deg,#2c78fc 0%,#7b74f5 52%,#9580ff 100%)}
+.blob{position:absolute;border-radius:50%;filter:blur(10px);opacity:.5}
+.b1{width:620px;height:620px;background:radial-gradient(circle,#a8c0ff,transparent 62%);top:-180px;right:-160px}
+.b2{width:520px;height:520px;background:radial-gradient(circle,#b7a6ff,transparent 62%);bottom:-160px;left:-140px}
+.wrap{position:absolute;inset:0;display:flex;flex-direction:column;padding:80px 78px 72px}
+.brand{display:flex;align-items:center;gap:15px;font-weight:800;font-size:36px}
+.logo{width:60px;height:60px;border-radius:16px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center}
+.kick{margin-top:78px;font-size:26px;font-weight:700;letter-spacing:.04em;color:#e7e2ff;text-transform:uppercase}
+h1{font-size:88px;line-height:1.0;font-weight:900;margin-top:26px;letter-spacing:-.045em}
+.answer{margin-top:52px;display:inline-flex;align-items:center;gap:22px;background:#fff;color:var(--carbon);border-radius:28px;padding:36px 44px;box-shadow:0 26px 60px rgba(20,20,60,.34);align-self:flex-start}
+.answer .ic{width:74px;height:74px;border-radius:20px;background:var(--mint);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.answer .tx{font-size:40px;font-weight:800;line-height:1.08}
+.answer .tx small{display:block;font-size:25px;font-weight:600;color:var(--ash);margin-top:6px}
+.chips{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:16px 26px;font-size:25px;font-weight:700}
+.foot{margin-top:auto;display:flex;align-items:flex-end;gap:20px;padding-top:40px}
+.foot .big{font-size:34px;font-weight:800;line-height:1.15}
+.foot .big span{color:#eae6ff;font-weight:700;font-size:26px;display:block;margin-top:6px}
+.cta{margin-left:auto;background:#fff;color:var(--iris);font-size:32px;font-weight:800;padding:26px 40px;border-radius:999px;white-space:nowrap;box-shadow:0 16px 40px rgba(20,20,60,.3)}
+</style></head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="wrap">
+  <div class="brand"><span class="logo"><svg width="36" height="36" viewBox="0 0 64 64"><rect x="10" y="11" width="33" height="24" rx="9.5" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><rect x="23" y="29" width="31" height="21" rx="9.5" fill="#fff"/><circle cx="33" cy="39.5" r="2.4" fill="#7b74f5"/><circle cx="39" cy="39.5" r="2.4" fill="#7b74f5"/><circle cx="45" cy="39.5" r="2.4" fill="#7b74f5"/></svg></span>Atenda</div>
+  <div class="kick">Hora de almoço · receção vazia</div>
+  <h1>O telefone toca.<br>Ninguém atende?</h1>
+  <div class="answer"><span class="ic"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="tx">A Atenda atende em 2 segundos.<small>Voz natural PT-PT · marca na agenda</small></span></div>
+  <div class="chips"><span class="chip">Tria urgências</span><span class="chip">Dados na UE (RGPD)</span><span class="chip">Mantém o seu número</span></div>
+  <div class="foot"><div class="big">A sua receção que nunca está ocupada.<span>Desde €89/mês · sem fidelização</span></div><span class="cta">Pedir demo →</span></div>
+</div>
+</body></html>

@@ -116,7 +116,16 @@ export default function RootLayout({
 }) {
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   return (
-    <html lang="pt-PT">
+    <html lang="pt-PT" suppressHydrationWarning>
+      <head>
+        {/* Marca html.js antes do primeiro paint para evitar "flash" de conteúdo
+            invisível: o hero e restantes .rv só ficam ocultos se houver JS. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+      </head>
       <body>
         {children}
         <script

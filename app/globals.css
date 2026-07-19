@@ -24,8 +24,10 @@ svg{flex-shrink:0}
 .slide.band-linen{background:var(--linen)}
 @media(max-width:900px){.deck{scroll-snap-type:y proximity}.slide{min-height:auto;padding:104px 20px 56px}}
 .inner{max-width:1200px;width:100%;margin:0 auto}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
+/* Reveal-on-scroll: só escondemos quando o JS confirma que consegue animar
+   (html.js, definido antes do primeiro paint). Sem JS → conteúdo visível. */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}html,.deck{scroll-behavior:auto}}
 
 /* ============ nav / rail ============ */

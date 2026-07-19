@@ -1,0 +1,39 @@
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{--iris:#9580ff;--lavender:#918df6;--mint:#33c758}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1920px}
+body{font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:#fff;letter-spacing:-.02em;overflow:hidden;position:relative;background:radial-gradient(130% 80% at 50% 8%,#2a2450 0%,#1a1730 40%,#111022 100%)}
+.glow{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(149,128,255,.38),transparent 65%);top:-160px;left:-120px;filter:blur(20px)}
+.wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;padding:150px 84px 130px;text-align:center}
+.brand{display:flex;align-items:center;gap:16px;font-weight:800;font-size:40px}
+.logo{width:64px;height:64px;border-radius:17px;background:var(--iris);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(149,128,255,.5)}
+.clock{margin-top:120px;font-size:150px;font-weight:900;letter-spacing:-.05em;line-height:1}
+.day{font-size:34px;font-weight:700;letter-spacing:.34em;color:var(--lavender);margin-top:10px}
+.lead{font-size:52px;font-weight:800;line-height:1.12;margin-top:56px;letter-spacing:-.03em}
+.lead .d{color:#a29bff}
+.card{margin-top:70px;width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:34px;padding:42px 44px;backdrop-filter:blur(8px);text-align:left;display:flex;align-items:center;gap:28px}
+.ring{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--iris),var(--lavender));display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(149,128,255,.16)}
+.card .who{font-size:36px;font-weight:800}
+.card .sub{font-size:26px;color:#b9b4e6;font-weight:600;margin-top:6px}
+.ok{margin-top:34px;width:100%;background:rgba(51,199,88,.16);border:1px solid rgba(51,199,88,.4);color:#7dffa1;border-radius:26px;padding:30px;font-size:34px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:16px}
+.cta{margin-top:auto;width:100%;background:var(--iris);color:#fff;font-size:42px;font-weight:800;padding:40px;border-radius:999px;box-shadow:0 20px 50px rgba(149,128,255,.5)}
+.meta{font-size:30px;color:#c9c4f0;font-weight:600;margin-top:34px}
+</style></head>
+<body>
+<div class="glow"></div>
+<div class="wrap">
+  <div class="brand"><span class="logo"><svg width="38" height="38" viewBox="0 0 64 64"><rect x="10" y="11" width="33" height="24" rx="9.5" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><rect x="23" y="29" width="31" height="21" rx="9.5" fill="#fff"/><circle cx="33" cy="39.5" r="2.4" fill="#9580ff"/><circle cx="39" cy="39.5" r="2.4" fill="#9580ff"/><circle cx="45" cy="39.5" r="2.4" fill="#9580ff"/></svg></span>Atenda</div>
+  <div class="clock">23:07</div>
+  <div class="day">SÁBADO</div>
+  <div class="lead">O seu negócio fechou há&nbsp;3&nbsp;horas.<br><span class="d">Ela continua a atender.</span></div>
+  <div class="card">
+    <span class="ring"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+    <div><div class="who">Cliente novo</div><div class="sub">Chamada recebida · fora de horas</div></div>
+  </div>
+  <div class="ok">✓ Atendida em 2s · marcação feita</div>
+  <div class="cta">Pedir demonstração →</div>
+  <div class="meta">WhatsApp · Instagram · Chamadas · €89/mês</div>
+</div>
+</body></html>

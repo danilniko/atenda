@@ -37,6 +37,7 @@ export function Rail() {
 
 export function Reveal() {
   useEffect(() => {
+    const els = Array.from(document.querySelectorAll<HTMLElement>(".rv"));
     const io = new IntersectionObserver(
       (es) => {
         es.forEach((e) => {
@@ -48,8 +49,14 @@ export function Reveal() {
       },
       { threshold: 0.15 }
     );
-    document.querySelectorAll(".rv").forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    els.forEach((el) => io.observe(el));
+    // Failsafe: se o observer não disparar (JS parcial, etc.), garante que
+    // nada fica preso invisível — sobretudo o hero acima da dobra.
+    const t = setTimeout(() => els.forEach((el) => el.classList.add("in")), 1400);
+    return () => {
+      io.disconnect();
+      clearTimeout(t);
+    };
   }, []);
   return null;
 }
