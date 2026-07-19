@@ -7,10 +7,10 @@ services:
     restart: unless-stopped
     environment:
       NODE_ENV: production
-      MONGODB_URI: ${MONGODB_URI}
+      MONGODB_URI: ${MONGODB_URI:?MONGODB_URI em falta — criar .env.prod e usar --env-file .env.prod}
       MONGODB_DB: ${MONGODB_DB:-atenda}
       NEXT_PUBLIC_META_PIXEL_ID: ${NEXT_PUBLIC_META_PIXEL_ID:-}
-      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL}
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://atenda.pt}
     expose:
       - "3000"
     depends_on:
@@ -24,8 +24,8 @@ services:
     container_name: atenda-mongodb
     restart: unless-stopped
     environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:?em falta no .env.prod}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:?em falta no .env.prod}
       MONGO_INITDB_DATABASE: ${MONGODB_DB:-atenda}
     volumes:
       - mongodb_prod_data:/data/db
