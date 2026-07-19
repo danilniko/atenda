@@ -34,7 +34,12 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
-  verification: { google: "NZL036KxYCgs5z3Iy87Iz0lrDwOZsP1rZnaf5RUTHKE" },
+  verification: {
+    google: [
+      "NZL036KxYCgs5z3Iy87Iz0lrDwOZsP1rZnaf5RUTHKE",
+      "R83fSTyXBW_Jt_v_0ceY9xn9PSt4IHtdixMJBh7696Y",
+    ],
+  },
 };
 
 const softwareLd = {
