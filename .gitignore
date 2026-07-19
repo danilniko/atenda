@@ -5,7 +5,5 @@ node_modules
 .env.prod
 .DS_Store
 
-# SSL certs (baixados da DynaDot)
-nginx/ssl/*.pem
-nginx/ssl/*.crt
-nginx/ssl/*.key
+# SSL certs (baixados da DynaDot) — nunca commitar chaves/certificados
+!nginx/ssl/.gitkeep
