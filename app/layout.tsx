@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  verification: { google: "NZL036KxYCgs5z3Iy87Iz0lrDwOZsP1rZnaf5RUTHKE" },
 };
 
 const softwareLd = {
