@@ -4,6 +4,3 @@ node_modules
 .env
 .env.prod
 .DS_Store
-nginx/ssl/*.pem
-nginx/ssl/*.crt
-nginx/ssl/*.key

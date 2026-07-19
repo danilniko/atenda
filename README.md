@@ -50,15 +50,16 @@ apontando `MONGODB_URI` para
 ### Prod — app + MongoDB + nginx
 1. `cp .env.prod.example .env.prod` e preencher (passwords, `MONGODB_URI`,
    `NEXT_PUBLIC_SITE_URL`, domínio)
-2. Certificado SSL da OVH: colocar `fullchain.pem` e `privkey.pem` em
-   `nginx/ssl/` (ajustar `nginx/conf.d/default.conf` se os nomes dos
-   ficheiros forem diferentes ou o domínio não for `atenda.pt`)
-3. Subir:
+2. Subir:
    ```bash
    docker compose -f docker-compose.prod.yml --env-file .env.prod up -d --build
    ```
-4. A app fica atrás do nginx (porta 80 → redireciona para 443, TLS
-   terminado no nginx, proxy para o container `app` na porta 3000).
+3. A app fica atrás do nginx na porta 80, que faz proxy para o container
+   `app` (porta 3000).
+
+O TLS/HTTPS é terminado a montante pela DynaDot — o nginx só serve HTTP
+interno e confia no cabeçalho `X-Forwarded-Proto` enviado pelo proxy da
+frente. Não são necessários certificados no servidor.
 
 ## SEO incluído
 - Metadata API: title/description com keywords de tarefa, canonical, OG
